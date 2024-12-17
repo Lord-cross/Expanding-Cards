@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Expanding Cards</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="css/style.css" rel="stylesheet">
+        <!-- <link rel="stylesheet" href="vendor/boxicons/css/boxicons.min.css"> -->
+        <!-- <link rel="stylesheet" href="css/index.css"> -->
+        <style>
+        .panel {
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: auto 100%;
+            border-radius: 20px;
+            cursor: pointer;
+            width: 5rem;
+            height: 35rem;
+            flex: 0.5;
+            transition: flex 500ms ease;
+        }
+        .panel.active {
+        flex: 5;
+        }
+        </style>
+    </head>
+    <body class="flex justify-center items-center h-screen">
+        <div
+            class="card-container flex justify-center items-center space-x-5">
+            <div class="panel"
+                style="background-image: url(asset/img-1.jpg);">
+            </div>
+            <div class="panel"
+                style="background-image: url(asset/img-2.jpg);">
+            </div>
+            <div class="panel"
+                style="background-image: url(asset/img-3.jpg);">
+            </div>
+            <div class="panel"
+                style="background-image: url(asset/img-4.jpg);">
+            </div>
+        </div>
+        <script>
+            const panels = document.querySelectorAll('.panel');
+for (const panel of panels) {
+    panel.addEventListener('click', () => {
+        removeActive();
+        panel.classList.add('active');
+    })
+}
+const removeActive = () => {
+    for (const panel of panels) {
+        panel.classList.remove('active')
+    }
+}
+        </script>
+    </body>
+</html>
